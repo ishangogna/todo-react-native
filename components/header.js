@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 
 export default function header() {
     return(
         <View style = {styles.header}>
             <Text style = {styles.text}>Todo App</Text>
+            
         </View>
 
     )
@@ -13,14 +14,14 @@ export default function header() {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: 'red',
-        height: 80,
+        height: 100,
     },
     text : {
         textAlign : 'center',
         color : 'white',
-        fontSize : 20,
+        fontSize : 30,
         fontWeight : 'bold',
-        marginTop : 20,
+        marginTop : 45,
         
     }
 });
