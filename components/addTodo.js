@@ -7,7 +7,7 @@ export default function AddTodo({addTodo}) {
     const handleChangeText = (val) => {
         setText(val);
     }
-
+    
     return (
         <View style = {styles.todoContainer}>
             <TextInput

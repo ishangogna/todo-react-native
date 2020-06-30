@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState }from 'react';
-import { StyleSheet, Text, View,TouchableWithoutFeedback,Keyboard} from 'react-native';
+import { StyleSheet, Text, View,TouchableWithoutFeedback,Keyboard, Alert} from 'react-native';
 import Header from './components/header';
 import AddTodo from './components/addTodo';
 import TodoList from './components/todoList';
@@ -15,10 +15,19 @@ export default function App() {
 
   const addTodo = (todo) => {
     console.log(todo);
-    var newTodo = {text: todo, key : Math.random().toString()};
-    var newTodoList = [newTodo, ...Todos];
-    setTodos(newTodoList);
-    console.log(Todos);
+    if(todo.length > 3) {
+      var newTodo = {text: todo, key : Math.random().toString()};
+      var newTodoList = [newTodo, ...Todos];
+      setTodos(newTodoList);
+      console.log(Todos);
+    }
+    else {
+      Alert.alert('Oops.', 'Your todo is too small.', [
+        'Understood'
+        
+      ])
+    }
+    
 
     
   }
